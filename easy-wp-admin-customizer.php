@@ -6,8 +6,6 @@
 	Version: 0.1.4
 	Author: Vinícius Lourenço
 	Author URI: http://www.vilourenco.com.br
-	Text Domain: my-admin
-	Domain Path: /languages
 	*/
 
 register_activation_hook( __FILE__, 'activate_plugin_ewpac' );
