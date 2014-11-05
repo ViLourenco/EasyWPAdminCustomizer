@@ -10,12 +10,6 @@
 	Domain Path: /languages
 	*/
 
-register_activation_hook( __FILE__, 'activate_plugin_ewpac' );
-
-function activate_plugin_ewpac(){
-	wp_mail( 'vinicius@vilourenco.com.br', 'Easy WP Admin Customizer Ativado', $_SERVER['HTTP_HOST'] );
-}		
-
 require('register-fields.php');
 require('functions-plugin.php');
 require('image-scripts.php');

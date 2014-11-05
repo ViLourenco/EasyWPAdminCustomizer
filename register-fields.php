@@ -1,35 +1,35 @@
 <?php
 
-function active_plugin_function(){
-	add_action('admin_menu','my_admin_create_menu');
+function ewpac_active_plugin_function(){
+	add_action('admin_menu','ewpac_create_menu');
 }
 
-function my_admin_create_menu(){
-	add_options_page('Easy WP Admin Customizer','Easy WP Admin Customizer','manage_options', 'my_admin_page' , 'my_admin_menu_page');
+function ewpac_create_menu(){
+	add_options_page('Easy WP Admin Customizer','Easy WP Admin Customizer','manage_options', 'my_admin_page' , 'ewpac_menu_page');
 }
 
-function my_admin_api(){
+function ewpac_api(){
 
 	/////// ADICIONANDO OS CAMPOS ///////
 
 	add_settings_section(
 		'my_admin_section_options_id',
 		'Faster and simple way to clean and customize your admin dashboard!',
-		'my_admin_callback_function',
+		'ewpac_callback_function',
 		'my_admin_page'
 	);
 
 	add_settings_section(
 		'my_admin_section_options_id_custom_box_id',
 		'Custom dashboard widget',
-		'my_admin_custom_box_callback',
+		'ewpac_custom_box_callback',
 		'my_admin_page'
 	);	
 
 	add_settings_field(
 		'footer-message',
 		'Footer text:',
-		'my_admin_field_footer_text_callback',
+		'ewpac_field_footer_text_callback',
 		'my_admin_page',
 		'my_admin_section_options_id'
 	);
@@ -37,7 +37,7 @@ function my_admin_api(){
 	add_settings_field(
 		'hide-widgets-front',
 		'Hide Widgets Home:',
-		'my_admin_field_hide_widgets_callback',
+		'ewpac_field_hide_widgets_callback',
 		'my_admin_page',
 		'my_admin_section_options_id'
 	);
@@ -45,7 +45,7 @@ function my_admin_api(){
 	add_settings_field(
 		'hide-wp-logo-left',
 		'Hide WP Logo:',
-		'my_admin_remove_wp_logo_left_top_callback',
+		'ewpac_remove_wp_logo_left_top_callback',
 		'my_admin_page',
 		'my_admin_section_options_id'
 	);
@@ -53,7 +53,7 @@ function my_admin_api(){
 	add_settings_field(
 		'hide_welcome_widget_home',
 		'Hide welcome box:',
-		'my_admin_remove_hide_welcome_widget_home_callback',
+		'ewpac_remove_hide_welcome_widget_home_callback',
 		'my_admin_page',
 		'my_admin_section_options_id'
 	);
@@ -61,7 +61,7 @@ function my_admin_api(){
 	add_settings_field(
 		'hide_update_box',
 		'Hide update box:',
-		'my_admin_remove_update_box_callback',
+		'ewpac_remove_update_box_callback',
 		'my_admin_page',
 		'my_admin_section_options_id'
 	);
@@ -69,7 +69,7 @@ function my_admin_api(){
 	add_settings_field(
 		'hide_update_page',
 		'Hide update page:',
-		'my_admin_field_hide_update_page_callback',
+		'ewpac_field_hide_update_page_callback',
 		'my_admin_page',
 		'my_admin_section_options_id'
 	);
@@ -77,7 +77,7 @@ function my_admin_api(){
 	add_settings_field(
 		'active_custom_box_dashboard',
 		'Active Dashboard Custom Box:',
-		'my_admin_active_custom_box_dashboard_callback',
+		'ewpac_active_custom_box_dashboard_callback',
 		'my_admin_page',
 		'my_admin_section_options_id_custom_box_id'
 	);
@@ -85,7 +85,7 @@ function my_admin_api(){
 	add_settings_field(
 		'input_name_custom_field_box',
 		'Title:',
-		'my_admin_input_name_custom_box_callback',
+		'ewpac_input_name_custom_box_callback',
 		'my_admin_page',
 		'my_admin_section_options_id_custom_box_id'
 	);
@@ -93,7 +93,7 @@ function my_admin_api(){
 	add_settings_field(
 		'logo_custom_widget',
 		'Your Logo:',
-		'my_admin_field_image_callback',
+		'ewpac_field_image_callback',
 		'my_admin_page',
 		'my_admin_section_options_id_custom_box_id'
 	);
@@ -101,7 +101,7 @@ function my_admin_api(){
 	add_settings_field(
 		'message_custom_widget',
 		'Initial Message:',
-		'my_admin_message_custom_widget_callback',
+		'ewpac_message_custom_widget_callback',
 		'my_admin_page',
 		'my_admin_section_options_id_custom_box_id'
 	);
@@ -125,7 +125,7 @@ function my_admin_api(){
 /////// FORM ///////
 
 //Função que insere a estrutura da tela de configurações.
-function my_admin_menu_page(){
+function ewpac_menu_page(){
 ?>
 	<div class="wrap">
 		<h2>Easy WP Admin Customizer v1.0</h2>
@@ -144,66 +144,66 @@ function my_admin_menu_page(){
 /////// CALLBACKS ///////
 
 //Mensagem referente ao título da página de form.
-function my_admin_callback_function(){
+function ewpac_callback_function(){
 	echo '<hr>';
 	echo '<p>Cleaning options:</p>';
 }
 
 
-function my_admin_custom_box_callback(){
+function ewpac_custom_box_callback(){
 	echo '<hr>';
 	echo '<p>Your custom widget box in the initial dashboard page! - <i>This is fantastic to put your logo and message in your sites!</i></p>';
 }
 
 
 
-function my_admin_field_footer_text_callback(){
+function ewpac_field_footer_text_callback(){
 	echo '<input type="text" name="footer-message" value="' . esc_attr( get_option('footer-message') ) . '"/> Text will be displayed in bottom left of WP Admin.';
 }
 
 
 
-function my_admin_field_hide_widgets_callback(){
+function ewpac_field_hide_widgets_callback(){
 ?>
 	<input type="checkbox" id="hide-widgets-front" name="hide-widgets-front" value="1" <?php checked( 1, get_option( 'hide-widgets-front' ), true ); ?> class="code"/> This option will hide all the WP default widgets in the dashboard.
 <?php } 
 
 
-function my_admin_remove_wp_logo_left_top_callback(){
+function ewpac_remove_wp_logo_left_top_callback(){
 ?>
 	<input type="checkbox" id="hide-wp-logo-left" name="hide-wp-logo-left" value="1" <?php checked( 1, get_option( 'hide-wp-logo-left' ), true ); ?> class="code"/> Hide the top left WP logo.
 <?php }
 
 
-function my_admin_remove_hide_welcome_widget_home_callback(){
+function ewpac_remove_hide_welcome_widget_home_callback(){
 ?>
 	<input type="checkbox" id="hide_welcome_widget_home" name="hide_welcome_widget_home" value="1" <?php checked( 1, get_option( 'hide_welcome_widget_home' ), true ); ?> class="code"/> Hide the welcome widget in the dashboard.
 <?php }
 
 
-function my_admin_remove_update_box_callback(){
+function ewpac_remove_update_box_callback(){
 ?>
 	<input type="checkbox" id="hide_update_box" name="hide_update_box" value="1" <?php checked( 1, get_option( 'hide_update_box' ), true ); ?> class="code"/> Hide the update message box. <i>(If exists!)</i>		
 <?php }
 
 
-function my_admin_field_hide_update_page_callback(){
+function ewpac_field_hide_update_page_callback(){
 ?>
 	<input type="checkbox" id="hide_update_page" name="hide_update_page" value="1" <?php checked( 1, get_option( 'hide_update_page' ), true ); ?> class="code"/> Hide the update page.</i>		
 <?php }
 
 
-function my_admin_active_custom_box_dashboard_callback(){
+function ewpac_active_custom_box_dashboard_callback(){
 ?>
 	<input type="checkbox" id="active_custom_box_dashboard" name="active_custom_box_dashboard" value="1" <?php checked( 1, get_option( 'active_custom_box_dashboard' ), true ); ?> class="code"/> <strong>When activated please fill the options below.</strong>
 <?php }
 
-function my_admin_input_name_custom_box_callback(){
+function ewpac_input_name_custom_box_callback(){
 	echo '<input type="text" name="input_name_custom_field_box" id="input_name_custom_field_box" value="' . esc_attr( get_option('input_name_custom_field_box') ) . '"/>';
 }
 
 
-function my_admin_field_image_callback(){
+function ewpac_field_image_callback(){
 ?>
 	<?php if(get_option('logo_custom_widget')){ ?> 
 		<div><img src="<?php echo esc_attr( get_option('logo_custom_widget') ); ?>" /> </div> 
@@ -214,13 +214,13 @@ function my_admin_field_image_callback(){
 }
 
 
-function my_admin_message_custom_widget_callback(){
+function ewpac_message_custom_widget_callback(){
 	echo '<input type="text" name="message_custom_widget" id="message_custom_widget" value="' . esc_attr( get_option('message_custom_widget') ) . '"/>';
 }
 
 
 /////// HOOKS ///////
 
-add_action('init','active_plugin_function');
-add_action('admin_init','my_admin_api');	
+add_action('init','ewpac_active_plugin_function');
+add_action('admin_init','ewpac_api');	
 
