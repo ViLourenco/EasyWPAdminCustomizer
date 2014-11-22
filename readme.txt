@@ -30,15 +30,15 @@ https://github.com/ViLourenco/EasyWPAdminCustomizer
 
 == Frequently Asked Questions ==
 
-= Doesn't need, it's pretty easy to use it. = 
+= Doesn't need, it's pretty easy to use it, trust in me! o/ = 
 
 == Screenshots ==
 
-1. Divulga WEB do TSE em seu site.
+1. Options Page.
 
 == Changelog ==
 
-* Version Full
+* Version Full, but we'll more features in the future! o/
 
 == Upgrade Notice ==
 
