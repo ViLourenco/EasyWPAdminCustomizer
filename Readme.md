@@ -15,3 +15,5 @@ Developed by a brazilian developer, to the whole world! o/
 1. Upload the plugin 'Easy WP Admin Customizer' in the directory '/wp-content/plugins/'.
 1. Active in the 'Plugins' options.
 1. Go to 'Settings' and then in 'Easy WP Admin Customizer'.
+
+Status of refactoring code: Starting in 1 week!
